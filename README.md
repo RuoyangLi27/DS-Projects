@@ -1,2 +1,2 @@
-# DS-take-home-challenge
+# DS-take-home-challenge. Only for academic purpose.
 # Practice makes perfect
