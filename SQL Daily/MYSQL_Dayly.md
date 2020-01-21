@@ -35,35 +35,20 @@ https://leetcode.com/problems/department-top-three-salaries/submissions/
 #2019--01-21#
 
 ```SELECT T3.Name AS Department, T2.Name AS Employee, T2.Salary
-
 FROM
-
 (
-
 SELECT T1.DepartmentId, T1.Name, T1.Salary
-
 FROM
-
 (
-
 SELECT E1.DepartmentId, E1.Name, E1.Salary, COUNT(DISTINCT(E2.Salary)) AS RANK
-
 FROM Employee AS E1 
-
 INNER JOIN Employee AS E2
-
 ON E1.Salary <=E2.Salary AND E1.DepartmentId=E2.DepartmentId
-
 GROUP BY E1.Name
-
     ) AS T1
-    
 WHERE T1.RANK <=3
-
     ) AS T2
-    
     INNER JOIN Department AS T3
-    
 WHERE T2.DepartmentId=T3.Id
 ```
 
