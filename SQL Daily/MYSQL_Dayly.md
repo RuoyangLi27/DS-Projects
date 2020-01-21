@@ -1,10 +1,9 @@
 
 **#Use AVG with GROUP BY Function to calculate 'rate'#**
-
 #https://leetcode.com/problems/trips-and-users/submissions/#
 #2019--01-20#
 
-SELECT 
+```SELECT 
 
 A.Request_at as Day, 
 
@@ -26,6 +25,7 @@ WHERE B.Banned= 'No' AND C.Banned='No' AND
 A.Request_at BETWEEN DATE('2013-10-1') AND DATE('2013-10-3')
 
 GROUP BY A.Request_at;
+```
 
 
 
@@ -34,7 +34,7 @@ GROUP BY A.Request_at;
 https://leetcode.com/problems/department-top-three-salaries/submissions/
 #2019--01-21#
 
-SELECT T3.Name AS Department, T2.Name AS Employee, T2.Salary
+```SELECT T3.Name AS Department, T2.Name AS Employee, T2.Salary
 
 FROM
 
@@ -65,6 +65,8 @@ WHERE T1.RANK <=3
     INNER JOIN Department AS T3
     
 WHERE T2.DepartmentId=T3.Id
+```
+
 
 
 
