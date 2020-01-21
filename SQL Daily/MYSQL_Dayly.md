@@ -2,16 +2,24 @@
 **#Use AVG with GROUP BY Function to calculate 'rate'#**
 
 #https://leetcode.com/problems/trips-and-users/submissions/#
-#2019--01-20################################################
+#2019--01-20#
+
 SELECT 
+
 A.Request_at as Day, 
+
 ROUND(AVG(CASE WHEN A.Status !='completed' THEN 1
+
 ELSE 0  END) , 2) AS 'Cancellation Rate'
 
 FROM Trips AS A
+
 INNER JOIN Users AS B
+
 ON A.Client_id= B.Users_Id
-INNER JOIN Users AS C
+
+INNER JOIN Users AS 
+
 ON A.Driver_Id= C.Users_Id
 
 WHERE B.Banned= 'No' AND C.Banned='No' AND
