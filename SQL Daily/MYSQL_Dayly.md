@@ -1,7 +1,6 @@
 
 **Use AVG with GROUP BY Function to calculate 'rate'**
 
-
 *https://leetcode.com/problems/trips-and-users/submissions/*
 
 *2019--01-20*
@@ -35,7 +34,9 @@ GROUP BY A.Request_at;
 
 
 **Use INNER JOIN ON A < B to decide rank#Calculate top 3 salary by department**
+
 *https://leetcode.com/problems/department-top-three-salaries/submissions/*
+
 *2019--01-21*
 
 ```
