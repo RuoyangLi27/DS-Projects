@@ -3,7 +3,8 @@
 #https://leetcode.com/problems/trips-and-users/submissions/#
 #2019--01-20#
 
-```SELECT 
+```
+SELECT 
 
 A.Request_at as Day, 
 
@@ -34,7 +35,8 @@ GROUP BY A.Request_at;
 https://leetcode.com/problems/department-top-three-salaries/submissions/
 #2019--01-21#
 
-```SELECT T3.Name AS Department, T2.Name AS Employee, T2.Salary
+```
+SELECT T3.Name AS Department, T2.Name AS Employee, T2.Salary
 FROM
 (
 SELECT T1.DepartmentId, T1.Name, T1.Salary
