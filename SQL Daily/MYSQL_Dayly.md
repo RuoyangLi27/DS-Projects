@@ -1,5 +1,6 @@
 
 **#Use AVG with GROUP BY Function to calculate 'rate'#**
+
 #https://leetcode.com/problems/trips-and-users/submissions/#
 #2019--01-20################################################
 SELECT 
