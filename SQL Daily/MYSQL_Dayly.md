@@ -54,7 +54,7 @@ WHERE T2.DepartmentId=T3.Id
 
 *https://leetcode.com/problems/user-activity-for-the-past-30-days-ii/*
 
-*2019--01-21*
+*2019--01-25*
 
 ```
 SELECT CASE
