@@ -60,5 +60,21 @@ WHERE T2.DepartmentId=T3.Id
 
 
 
+**User Activity for the Past 30 Days II | use DISTINCE A B to choose a special combination of A B to do count etc.**
+
+*https://leetcode.com/problems/user-activity-for-the-past-30-days-ii/*
+
+*2019--01-21*
+
+```
+SELECT CASE
+WHEN ROUND(COUNT(DISTINCT user_id, session_id)/COUNT(DISTINCT(user_id)), 2)  is Null THEN 0
+ELSE ROUND(COUNT(DISTINCT user_id, session_id)/COUNT(DISTINCT(user_id)), 2) 
+END AS 'average_sessions_per_user'
+FROM Activity
+WHERE DATEDIFF('2019-07-27', activity_date) <30
+```
+    
+
 
 
