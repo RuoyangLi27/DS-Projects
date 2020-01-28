@@ -64,7 +64,29 @@ END AS 'average_sessions_per_user'
 FROM Activity
 WHERE DATEDIFF('2019-07-27', activity_date) <30
 ```
-    
+
+
+**buyers who have bought S8 but not iPhone | Follow the logic; use IN/ NOT IN to SELECT the right people**
+
+*https://leetcode.com/problems/sales-analysis-ii/submissions/*
+
+*2019--01-25*
+```
+SELECT DISTINCT S1.buyer_id
+FROM Product P1
+INNER JOIN Sales S1
+ON 
+P1.product_id=S1.product_id
+WHERE P1.product_name = 'S8' AND 
+S1.buyer_id NOT IN
+(
+SELECT S1.buyer_id
+FROM Product P1
+INNER JOIN Sales S1
+ON 
+P1.product_id=S1.product_id
+WHERE P1.product_name='iphone')
+```
 
 
 
