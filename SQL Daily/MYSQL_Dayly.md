@@ -88,5 +88,18 @@ P1.product_id=S1.product_id
 WHERE P1.product_name='iphone')
 ```
 
+**All People Report to the Given Manager | use join to link the reporters; manager~employee; use the last table employee as the final reporter and select original table's employee**
+
+*https://leetcode.com/problems/all-people-report-to-the-given-manager/*
+
+*2019--02-03*
+```
+SELECT E1.employee_id
+FROM Employees AS E1
+INNER JOIN Employees AS E2 ON E1.manager_id=E2.employee_id
+INNER JOIN Employees AS E3 ON E2.manager_id=E3.employee_id
+INNER JOIN Employees AS E4 ON E3.manager_id=E4.employee_id
+WHERE E1.employee_id !=1 and E4.employee_id=1
+```
 
 
