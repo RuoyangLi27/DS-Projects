@@ -102,4 +102,22 @@ INNER JOIN Employees AS E4 ON E3.manager_id=E4.employee_id
 WHERE E1.employee_id !=1 and E4.employee_id=1
 ```
 
+*Customers Who Bought All Products | fairly easy.**
+
+*https://leetcode.com/problems/customers-who-bought-all-products/submissions/*
+
+*2019--02-04*
+```
+SELECT T1.customer_id
+FROM
+(
+SELECT customer_id, COUNT(DISTINCT product_key) AS CT
+FROM Customer
+GROUP BY customer_id
+    ) AS T1
+WHERE 
+T1.CT=
+(SELECT COUNT(product_key)
+FROM Product)
+```
 
