@@ -121,3 +121,16 @@ T1.CT=
 FROM Product)
 ```
 
+*User Activity for the Past 30 Days I | fairly easy.**
+
+*https://leetcode.com/problems/user-activity-for-the-past-30-days-i/submissions/*
+
+*2019--02-10*
+```
+SELECT DISTINCT activity_date as day, COUNT(DISTINCT(user_id)) AS active_users
+FROM Activity
+GROUP BY activity_date
+HAVING ABS(DATEDIFF('2019-07-27', activity_date)) <30
+ORDER BY day
+```
+
