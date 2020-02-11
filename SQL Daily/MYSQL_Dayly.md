@@ -134,3 +134,17 @@ HAVING ABS(DATEDIFF('2019-07-27', activity_date)) <30
 ORDER BY day
 ```
 
+*Second Degree Follower | Cases like the foloweers' follower always use self join to find the correct relationship between followers**
+
+*https://leetcode.com/problems/second-degree-follower/submissions/*
+
+*2019--02-11*
+```
+SELECT F1.follower, COUNT(DISTINCT(F2.follower)) AS num
+FROM follow AS F1
+INNER JOIN follow AS F2
+ON F1.follower=F2.followee
+GROUP BY F1.follower
+HAVING(COUNT(F2.followee>0))
+```
+
