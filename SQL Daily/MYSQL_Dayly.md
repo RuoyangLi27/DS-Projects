@@ -148,3 +148,24 @@ GROUP BY F1.follower
 HAVING(COUNT(F2.followee>0))
 ```
 
+*active-business | use join and compare to find certain people meet certain standard**
+
+*https://leetcode.com/problems/active-businesses/submissions/*
+
+*2019--02-12*
+```
+# Write your MySQL query statement below
+SELECT T2.business_id
+FROM
+(
+SELECT event_type, AVG(occurences) AS average
+FROM Events
+GROUP BY event_type
+    ) AS T1
+    INNER JOIN Events AS T2
+ON T1.event_type=T2.event_type
+WHERE T2.occurences > T1.average
+GROUP BY business_id
+HAVING COUNT(business_id)>=2
+```
+
