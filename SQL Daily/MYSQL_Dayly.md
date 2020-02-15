@@ -175,14 +175,14 @@ HAVING COUNT(business_id)>=2
 
 *https://leetcode.com/problems/unpopular-books/submissions/*
 
-*2019--02-12*
+*2019--02-15*
 ```
 # Write your MySQL query statement below
 
 SELECT book_id, name
 FROM Books
 WHERE DATEDIFF('2019-06-23', available_from) >=31
-AND book_id NOT IN
+AND book_id NOT IN#这步是精髓；找到一年内销售>=10的，再用not in找到一年内销售<10的
 (SELECT book_id
 FROM Orders
 WHERE dispatch_date BETWEEN '2018-06-23' AND '2019-06-23'
