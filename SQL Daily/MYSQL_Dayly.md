@@ -169,3 +169,24 @@ GROUP BY business_id
 HAVING COUNT(business_id)>=2
 ```
 
+*Unpopular Books | This is a tricky one. Be careful when using where because that may filter out '0' numbers.*
+
+*when consider id with number<=10, sometimes consiter id with bumber >10 and use NOT IN to find the thing you want.*
+
+*https://leetcode.com/problems/unpopular-books/submissions/*
+
+*2019--02-12*
+```
+# Write your MySQL query statement below
+
+SELECT book_id, name
+FROM Books
+WHERE DATEDIFF('2019-06-23', available_from) >=31
+AND book_id NOT IN
+(SELECT book_id
+FROM Orders
+WHERE dispatch_date BETWEEN '2018-06-23' AND '2019-06-23'
+GROUP BY book_id
+HAVING sum(quantity) >=10)
+
+```
