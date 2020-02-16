@@ -190,3 +190,22 @@ GROUP BY book_id
 HAVING sum(quantity) >=10)
 
 ```
+
+* Reported Posts II | remember COUNT(NULL) is 0*
+
+*https://leetcode.com/problems/reported-posts-ii/*
+
+*2019--02-16*
+```
+# Write your MySQL query statement below
+
+SELECT ROUND(AVG(T1.P)*100, 2) AS 'average_daily_percent'
+FROM
+(
+SELECT A1.action_date, COUNT(DISTINCT(M1.post_id))/COUNT(DISTINCT(A1.post_id)) as P
+FROM Actions AS A1 LEFT JOIN Removals AS M1 ON A1.post_id=M1.post_id
+WHERE A1.action='report' AND A1.extra='spam'
+GROUP BY A1.action_date
+    ) AS T1
+
+```
