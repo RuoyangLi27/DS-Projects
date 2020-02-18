@@ -224,3 +224,26 @@ INNER JOIN Product P1
 ON S1.product_id=P1.product_id
 
 ```
+
+* Running Total for Different Genders | How to solve running sum problem without a window() function? Self JOIN ON A>=B, then group by sum*
+
+*https://leetcode.com/problems/running-total-for-different-genders/submissions/*
+
+*2019--02-17*
+```
+#it's a running sum question here
+
+SELECT  S1.gender, S1.day, sum(S2.score_points) AS total
+FROM Scores AS S1
+INNER JOIN Scores AS S2
+ON S1.gender =S2.gender
+WHERE S1.day >=S2.day
+GROUP BY S1.gender, S1.day
+ORDER BY S1.gender, S1.day
+
+```
+
+
+
+
+
