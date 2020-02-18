@@ -209,3 +209,18 @@ GROUP BY A1.action_date
     ) AS T1
 
 ```
+
+* Supereasy | super easy; vary basic*
+
+*https://leetcode.com/problems/product-sales-analysis-i/submissions/*
+
+*2019--02-17*
+```
+# Write your MySQL query statement below
+
+SELECT P1.product_name, S1.year, S1.price
+FROM Sales S1
+INNER JOIN Product P1
+ON S1.product_id=P1.product_id
+
+```
