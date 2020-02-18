@@ -236,8 +236,8 @@ ON S1.product_id=P1.product_id
 SELECT  S1.gender, S1.day, sum(S2.score_points) AS total
 FROM Scores AS S1
 INNER JOIN Scores AS S2
-ON S1.gender =S2.gender
-WHERE S1.day >=S2.day
+ON S1.gender =S2.gender AND S1.day>=S2.day
+# WHERE S1.day >=S2.day
 GROUP BY S1.gender, S1.day
 ORDER BY S1.gender, S1.day
 
