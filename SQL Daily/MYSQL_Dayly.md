@@ -243,7 +243,22 @@ ORDER BY S1.gender, S1.day
 
 ```
 
+* Last Person to Fit in the Elevator | Use join A>=B and sum to get the running sum; use orderby desc+limit to get the last rows; it seems the LAST() function is not supported by mysql*
 
+*https://leetcode.com/problems/last-person-to-fit-in-the-elevator/submissions/*
 
+*2019--02-17*
+```
+
+SELECT Q1.person_name
+FROM Queue AS Q1
+INNER JOIN Queue AS Q2
+ON Q1.turn >= Q2.turn
+GROUP BY Q1.person_id, Q1.turn
+HAVING(SUM(Q2.weight) <=1000)
+ORDER BY Q1.turn DESC
+LIMIT 1
+
+```
 
 
