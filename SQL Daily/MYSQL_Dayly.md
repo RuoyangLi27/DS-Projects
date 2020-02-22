@@ -261,7 +261,7 @@ LIMIT 1
 
 ```
 
-* Activity Participants | find the most, find the min, use NOT IN or WHERE*
+* Activity Participants | find the most, find the min, use NOT IN or WHERE, FASTER THAN 100%!*
 
 *https://leetcode.com/problems/activity-participants/submissions/*
 
