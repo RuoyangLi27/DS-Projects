@@ -229,7 +229,7 @@ ON S1.product_id=P1.product_id
 
 *https://leetcode.com/problems/running-total-for-different-genders/submissions/*
 
-*2019--02-17*
+*2019--02-18*
 ```
 #it's a running sum question here
 
@@ -247,7 +247,7 @@ ORDER BY S1.gender, S1.day
 
 *https://leetcode.com/problems/last-person-to-fit-in-the-elevator/submissions/*
 
-*2019--02-17*
+*2019--02-19*
 ```
 
 SELECT Q1.person_name
@@ -259,6 +259,33 @@ HAVING(SUM(Q2.weight) <=1000)
 ORDER BY Q1.turn DESC
 LIMIT 1
 
+```
+
+* Activity Participants | find the most, find the min, use NOT IN or WHERE*
+
+*https://leetcode.com/problems/activity-participants/submissions/*
+
+*2019--02-22*
+```
+
+SELECT activity
+FROM Friends
+
+GROUP BY activity
+HAVING (COUNT(*) != 
+        (SELECT MAX(CT)
+FROM
+(
+SELECT COUNT(*) AS CT
+FROM Friends
+GROUP BY activity ) AS max) AND 
+       COUNT(*) !=
+       (SELECT MIN(CT)
+FROM
+(
+SELECT COUNT(*) AS CT
+FROM Friends
+GROUP BY activity ) AS min))
 ```
 
 
