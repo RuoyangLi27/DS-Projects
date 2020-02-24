@@ -1,5 +1,5 @@
 
-**Use AVG with GROUP BY Function to calculate 'rate'**
+**Use AVG with GROUP BY Function to calculate 'rate' **
 
 *https://leetcode.com/problems/trips-and-users/submissions/*
 
