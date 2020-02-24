@@ -289,3 +289,32 @@ GROUP BY activity ) AS min))
 ```
 
 
+* Movie Rating | Use Union to conbine two table*
+
+*https://leetcode.com/problems/movie-rating/submissions/*
+
+*2019--02-22*
+```
+
+(SELECT U1.name AS results
+FROM Movie_Rating AS M1
+INNER JOIN Users AS U1
+ON M1.user_id = U1.User_id
+GROUP BY M1.user_id
+ORDER BY COUNT(M1.user_id) DESC, U1.name
+LIMIT 1)
+
+UNION
+
+(SELECT M3.title
+FROM Movie_Rating AS M2
+INNER JOIN Movies AS M3
+ON M2.movie_id=M3.movie_id
+WHERE M2.created_at BETWEEN '2020-02-01' AND '2020-02-29'
+GROUP BY M3.movie_id
+ORDER BY AVG(M2.rating) DESC, M3.title
+LIMIT 1 
+ )
+```
+
+
