@@ -293,7 +293,7 @@ GROUP BY activity ) AS min))
 
 *https://leetcode.com/problems/movie-rating/submissions/*
 
-*2019--02-22*
+*2019--02-23*
 ```
 
 (SELECT U1.name AS results
@@ -317,4 +317,17 @@ LIMIT 1
  )
 ```
 
+* Market Analysis I | If(Year(Orders.order_date)=2019,1,0) highlight*
 
+*https://leetcode.com/problems/market-analysis-i/submissions/*
+
+*2019--02-25*
+```
+
+Select user_id as buyer_id, join_date, sum(If(Year(Orders.order_date)=2019,1,0)) as orders_in_2019
+from Users
+Left Join Orders
+on Users.user_id=Orders.buyer_id
+Group by Users.user_id
+order by user_id
+```
