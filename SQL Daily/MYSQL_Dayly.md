@@ -331,3 +331,22 @@ on Users.user_id=Orders.buyer_id
 Group by Users.user_id
 order by user_id
 ```
+
+* Get Highest Answer Rate Question | No hard*
+
+*https://leetcode.com/problems/get-highest-answer-rate-question/submissions/*
+
+*2019--02-28*
+```
+
+SELECT question_id AS survey_log
+FROM survey_log AS S1
+GROUP BY question_id
+ORDER BY COUNT(answer_id) DESC
+LIMIT 1
+```
+
+
+
+
+
