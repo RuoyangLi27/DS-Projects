@@ -346,6 +346,25 @@ ORDER BY COUNT(answer_id) DESC
 LIMIT 1
 ```
 
+* Find the Team Size | No hard*
+
+*https://leetcode.com/problems/find-the-team-size/*
+
+*2019--03-28*
+```
+
+SELECT T1.employee_id, T2.team_size
+FROM Employee AS T1
+INNER JOIN
+(
+SELECT team_id, COUNT(*) AS team_size
+FROM Employee
+GROUP BY team_id
+    ) AS T2
+    ON T1.team_id=T2.team_id
+    
+```
+
 
 
 
