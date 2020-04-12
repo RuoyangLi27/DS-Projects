@@ -367,7 +367,7 @@ GROUP BY team_id
 
 * 1050. Actors and Directors Who Cooperated At Least Three Times*
 
-*2019--03-28*
+*2019--04-12*
 ```
 
 SELECT actor_id, director_id
