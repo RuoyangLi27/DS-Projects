@@ -377,6 +377,29 @@ HAVING COUNT(*) >=3;
     
 ```
 
+1321. Restaurant Growth
+
+```
+SELECT T1.visited_on, SUM(T2.amount) AS amount, ROUND(AVG(T2.amount), 2) AS average_amount
+FROM
+(
+SELECT visited_on, SUM(amount) AS amount
+FROM Customer
+GROUP BY visited_on
+    ) AS T1
+INNER JOIN
+(
+SELECT visited_on, SUM(amount) AS amount
+FROM Customer
+GROUP BY visited_on
+    ) AS T2
+ON DATEDIFF(T1.visited_on, T2.visited_on) <=6 AND DATEDIFF(T1.visited_on, T2.visited_on) >=0
+GROUP BY T1.visited_ON
+HAVING COUNT(*) =7
+ORDER BY T1.visited_on
+```
+
+
 
 
 
