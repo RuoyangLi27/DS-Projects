@@ -394,6 +394,7 @@ FROM Customer
 GROUP BY visited_on
     ) AS T2
 ON DATEDIFF(T1.visited_on, T2.visited_on) <=6 AND DATEDIFF(T1.visited_on, T2.visited_on) >=0
+#it's the highlight of the question. Use DATEDIFF appropriately when joining
 GROUP BY T1.visited_ON
 HAVING COUNT(*) =7
 ORDER BY T1.visited_on
